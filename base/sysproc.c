@@ -6,7 +6,6 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
-#include <stdio.h>
 
 int
 sys_fork(void)
@@ -96,6 +95,7 @@ sys_shutdown(void)
 {
   outw(0xB004, 0x0|0x2000);
   outw(0x604, 0x0|0x2000);
+  return 0;
 }
 
 int
@@ -110,5 +110,15 @@ sys_shutdown2(char * msg)
   outw(0xB004, 0x0|0x2000);
   outw(0x604, 0x0|0x2000);
   return 0;
-};
+}
+
+int
+sys_exit2(void)
+{
+  int status;
+
+  cprintf("Exiting with status %d\n", status);  
+  exit();
+  return 0;
+}
 

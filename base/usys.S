@@ -30,5 +30,6 @@ SYSCALL(sbrk)
 SYSCALL(sleep)
 SYSCALL(uptime)
 SYSCALL(shutdown)
-SYSCALL(shutdown2);
+SYSCALL(shutdown2)
 SYSCALL(mkdir2)
+SYSCALL(exit2);
