@@ -135,3 +135,31 @@ sys_smile(int num)
   }
   return 0;
 }
+
+int 
+sys_uptime2(int format)
+{
+  int i;
+  if(argint(0, &i) < 0){
+    return -1;
+  }
+
+  uint xticks;
+
+  acquire(&tickslock);
+  xticks = ticks;
+  release(&tickslock);
+
+  switch(i){
+    case 1:
+      return xticks;
+    case 2:
+      return xticks/100; //seconds
+    case 3:
+      return xticks/6000; //minutes
+    default:
+      return -1;
+  }
+
+  
+}
