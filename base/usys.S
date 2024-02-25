@@ -32,4 +32,5 @@ SYSCALL(uptime)
 SYSCALL(shutdown)
 SYSCALL(shutdown2)
 SYSCALL(mkdir2)
-SYSCALL(exit2);
+SYSCALL(exit2)
+SYSCALL(smile);

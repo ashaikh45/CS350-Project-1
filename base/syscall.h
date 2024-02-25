@@ -24,3 +24,4 @@
 #define SYS_mkdir2 23
 #define SYS_shutdown2 24
 #define SYS_exit2 25
+#define SYS_smile 26

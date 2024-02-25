@@ -113,12 +113,25 @@ sys_shutdown2(char * msg)
 }
 
 int
-sys_exit2(void)
+sys_exit2(int status)
 {
-  int status;
+  if (argint(0, &status) < 0)
+    return -1;
 
   cprintf("Exiting with status %d\n", status);  
   exit();
   return 0;
 }
 
+int
+sys_smile(int num)
+{
+  if (argint(0, &num) < 0)
+    return -1;
+
+  for (int i = 0; i < num; i++)
+  {
+    cprintf("smile %d: (◕ ‿ ◕)\n", i + 1); 
+  }
+  return 0;
+}
