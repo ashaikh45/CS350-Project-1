@@ -9,7 +9,7 @@
 
 //#define STUB_FUNCS
 #ifdef STUB_FUNCS
-void mkdir2(char * d1, char* d2) {}
+void smile(int &num) {}
 #endif
 
 
@@ -19,11 +19,14 @@ void mkdir2(char * d1, char* d2) {}
 
 int 
 main(int argc, char * argv[])
-{    
-    if(argc != 3){
-        printf(1, "Please provide the names of two directories to create");
+{
+	if(argc != 2)
+    {
+        printf(1, "Please provide a positive integer argument as a number of smiley faces you want");
+        exit();
     }
 
-	mkdir2(argv[1], argv[2]);
-    exit(); //return 0;
+    int num = atoi(argv[1]);
+    smile(num); 
+    // return 0;
 }
