@@ -25,3 +25,4 @@
 #define SYS_shutdown2 24
 #define SYS_exit2 25
 #define SYS_smile 26
+#define SYS_uptime2 27
